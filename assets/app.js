@@ -792,14 +792,11 @@
   });
 
   /* ---------------------------------------------------------
-     动向便签：实时抓取 + 静态内容
+     动向便签：真实动态快照 + 已知行程 + 写给你的便签
+     动态数据来自 data/live.js（构建时抓取），
+     之所以不用运行时接口：第三方热榜受 CORS / 限流影响，浏览器端直连不稳定。
   --------------------------------------------------------- */
-  var LIVE_ENDPOINTS = [
-    { url: 'https://60s.viki.moe/v2/weibo', name: '微博热搜' },
-    { url: 'https://60s.viki.moe/v2/toutiao', name: '头条热榜' },
-    { url: 'https://60s.viki.moe/v2/zhihu', name: '知乎热榜' }
-  ];
-  var KW = ['马嘉祺', '时代少年团', 'TNT', '台风少年团'];
+  var LIVE_SNAPSHOT = window.LIVE_DATA || [];
 
   function noteEl(cls, src, html, foot) {
     var d = document.createElement('article');
@@ -812,13 +809,17 @@
     return d;
   }
 
-  function renderNotes(liveItems) {
+  function renderNotes() {
     var board = $('#notesBoard');
     board.innerHTML = '';
 
-    // 实时条
-    liveItems.forEach(function (it) {
-      board.appendChild(noteEl('note-live', it.src, it.html, it.foot));
+    // 真实动态
+    LIVE_SNAPSHOT.forEach(function (it) {
+      board.appendChild(noteEl(
+        'note-live', it.tag || '动态',
+        '<a href="' + it.url + '" target="_blank" rel="noopener">' + it.title + '</a>',
+        it.meta
+      ));
     });
 
     // 已知行程
@@ -826,74 +827,21 @@
       board.appendChild(noteEl('note-plan', n.src, n.text, '已公开信息'));
     });
 
-    // 心愿
+    // 写给小羊
     WISH_NOTES.forEach(function (n) {
-      board.appendChild(noteEl('note-wish', n.src, n.text, '来自粉丝'));
+      board.appendChild(noteEl('note-wish', n.src, n.text, '写给你的'));
     });
   }
 
-  function fetchLive() {
-    var promises = LIVE_ENDPOINTS.map(function (ep) {
-      return fetch(ep.url, { mode: 'cors' })
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (j) {
-          if (!j || !j.data) return [];
-          var arr = Array.isArray(j.data) ? j.data : (j.data.data || []);
-          return arr.filter(function (x) {
-            return x && x.title && KW.some(function (k) { return x.title.indexOf(k) >= 0; });
-          }).map(function (x) {
-            var hot = x.hot_value_desc || (x.hot_value ? (x.hot_value > 10000 ? (x.hot_value / 10000).toFixed(1) + ' 万热度' : x.hot_value + ' 热度') : '');
-            return {
-              src: ep.name,
-              html: '<a href="' + (x.link || '#') + '" target="_blank" rel="noopener">' + x.title + '</a>',
-              foot: hot
-            };
-          });
-        })
-        .catch(function () { return []; });
-    });
-
-    return Promise.all(promises).then(function (arrs) {
-      var all = [];
-      arrs.forEach(function (a) { all = all.concat(a); });
-      return all;
-    });
-  }
-
-  // 静态兜底：确保「实时动向」区在任何环境下都有内容
-  var FALLBACK_LIVE = [
-    { src: '实时 · 关注中', html: '正在为你追踪 <a href="https://s.weibo.com/weibo?q=%23%E9%A9%AC%E5%98%89%E7%B2%A7%23" target="_blank" rel="noopener">#马嘉祺#</a> 的最新话题…', foot: '点击直达微博话题' },
-    { src: '实时 · 关注中', html: '《心室》新专辑相关讨论持续升温，<a href="https://search.bilibili.com/all?keyword=%E9%A9%AC%E5%98%89%E7%B2%A7" target="_blank" rel="noopener">更多内容在 B 站等你</a>。', foot: '点击直达 B 站' },
-    { src: '实时 · 关注中', html: '想第一时间知道新动态？可以关注 <a href="https://weibo.com/u/7494862764" target="_blank" rel="noopener">时代少年团队长-马嘉祺</a> 官方微博。', foot: '官方渠道' }
-  ];
-
-  function refreshNews() {
-    $('#newsStatusText').textContent = '正在连接实时动向…';
+  function initNews() {
+    renderNotes();
+    var now = new Date();
+    $('#newsStatusText').textContent = '最新动态 · 已收录 ' + LIVE_SNAPSHOT.length + ' 条';
     $('.news-pulse').classList.remove('off');
-
-    fetchLive().then(function (live) {
-      var now = new Date();
-      $('#newsTime').textContent = '更新于 ' + now.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-      if (live && live.length) {
-        $('#newsStatusText').textContent = '实时动向 · 已捕捉 ' + live.length + ' 条相关热榜';
-        $('.news-pulse').classList.remove('off');
-        renderNotes(live);
-      } else {
-        $('#newsStatusText').textContent = '实时源暂不可用 · 已切换为关注入口与已知行程';
-        $('.news-pulse').classList.add('off');
-        renderNotes(FALLBACK_LIVE);
-      }
-    }).catch(function () {
-      $('#newsStatusText').textContent = '实时源暂不可用 · 已切换为关注入口与已知行程';
-      $('.news-pulse').classList.add('off');
-      renderNotes(FALLBACK_LIVE);
-    });
+    $('#newsTime').textContent = '更新于 ' + now.toLocaleDateString('zh-CN', { month: 'long', day: 'numeric' });
   }
 
-  renderNotes(FALLBACK_LIVE);
-  refreshNews();
-  setInterval(refreshNews, 5 * 60 * 1000);
+  initNews();
 
   /* ---------------------------------------------------------
      祝福正文：以马嘉祺的口吻，写给小羊同学

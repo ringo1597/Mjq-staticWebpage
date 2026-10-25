@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>生日快乐 · 小羊同学</title>
+<meta name="description" content="给小羊同学的生日礼物 · 一个喜欢马嘉祺的人">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+</head>
+<body>
+
+<!-- 进场遮罩：点击后开启背景音乐 -->
+<div class="gate" id="gate">
+  <div class="gate-inner">
+    <div class="gate-date">A GIFT FOR YOU</div>
+    <h1 class="gate-title">小羊同学</h1>
+    <div class="gate-sub">生日快乐</div>
+    <div class="gate-hint">
+      <span class="gate-dot"></span>
+      点击开启 · 会有一首歌陪着你
+    </div>
+  </div>
+</div>
+
+<!-- 顶部导航 -->
+<nav class="nav" id="nav">
+  <div class="nav-brand"><span class="nav-mark">TNT</span><span class="nav-name">小羊同学</span></div>
+  <div class="nav-links">
+    <a href="#quotes">语录</a>
+    <a href="#guan">加冠礼</a>
+    <a href="#gallery">写真</a>
+    <a href="#clips">片段</a>
+    <a href="#songs">他的歌</a>
+    <a href="#news">动向</a>
+    <a href="#wish">祝福</a>
+  </div>
+  <div class="nav-tools">
+    <button class="tool" id="musicToggle" aria-label="音乐开关" title="音乐开关">
+      <span class="eq"><i></i><i></i><i></i><i></i></span>
+    </button>
+    <div class="nav-track" id="navTrack">—</div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">BIRTHDAY SPECIAL · 2026</div>
+      <h1 class="hero-title">
+        <span class="ht-line">你好，</span>
+        <span class="ht-name">小羊同学</span>
+      </h1>
+      <p class="hero-desc">这是一份专属你的时刻，<br>和所有喜欢你的人一样，这是为你准备的一份礼物。</p>
+      <div class="hero-meta">
+        <div class="hm-item"><span class="hm-num" data-count="39">0</span><span class="hm-label">张写真</span></div>
+        <div class="hm-sep"></div>
+        <div class="hm-item"><span class="hm-num" data-count="6">0</span><span class="hm-label">段影像</span></div>
+        <div class="hm-sep"></div>
+        <div class="hm-item"><span class="hm-num">∞</span><span class="hm-label">颗喜欢他的心</span></div>
+      </div>
+      <a href="#quotes" class="scroll-cue">
+        <span>向下滚动</span>
+        <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1v16M2 12l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 语录 -->
+  <section class="sec quotes" id="quotes">
+    <div class="sec-head">
+      <div class="sec-index">01</div>
+      <h2 class="sec-title">他的句子</h2>
+      <p class="sec-desc">你喜欢了这么久的人，说过的话一句句都在这。<span class="sec-hint">左右滑动可以切换</span></p>
+    </div>
+
+    <div class="quote-stage">
+      <div class="quote-card" id="quoteCard">
+        <div class="q-mark">“</div>
+        <blockquote class="q-text" id="qText"></blockquote>
+        <div class="q-meta">
+          <span class="q-from" id="qFrom"></span>
+          <span class="q-idx" id="qIdx"></span>
+        </div>
+        <div class="q-progress"><i id="qBar"></i></div>
+        <div class="q-swipe-hint" id="qSwipeHint">
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M6 1L1 6l5 5M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          滑动切换
+        </div>
+      </div>
+      <div class="quote-side" id="quoteSide"></div>
+    </div>
+
+    <div class="quote-ctrl">
+      <button class="qbtn" id="qPrev" aria-label="上一句">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="qdots" id="qDots"></div>
+      <button class="qbtn" id="qNext" aria-label="下一句">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- 加冠礼 -->
+  <section class="sec guan" id="guan">
+    <div class="guan-bg" id="guanBg"></div>
+    <div class="guan-veil"></div>
+
+    <div class="sec-head guan-head">
+      <div class="sec-index">02</div>
+      <h2 class="sec-title">加冠礼</h2>
+      <p class="sec-desc">
+        你喜欢的他，也在这一年长成了大人。<br>
+        「折纸为冠，踏晴空而来」—— 最好的王冠从来不是外物赋予的，<br>
+        而是一路坚持、汗水与热爱铸就的。
+      </p>
+    </div>
+
+    <div class="guan-body">
+      <div class="guan-left">
+        <div class="guan-date">
+          <div class="gd-year">2026</div>
+          <div class="gd-mark"></div>
+          <div class="gd-sub">THE CAP-ING CEREMONY</div>
+        </div>
+
+        <div class="guan-timeline">
+          <div class="gt-item">
+            <div class="gt-dot"></div>
+            <div class="gt-body">
+              <div class="gt-place">广州 · 华彩</div>
+              <div class="gt-date-txt">2026.05.01</div>
+              <div class="gt-desc">巡演启幕。以「加冠赛道」为概念线索，走完<b>启程 — 砺炼 — 加冕</b>的递进。</div>
+            </div>
+          </div>
+          <div class="gt-item">
+            <div class="gt-dot"></div>
+            <div class="gt-body">
+              <div class="gt-place">上海 · 收官</div>
+              <div class="gt-date-txt">2026.08.02</div>
+              <div class="gt-desc">巨型金色皇冠装置升起，限定舞台环节。<b>《唯我论者的独白》</b> solo —— 布满荆棘红玫瑰的舞台上，他在跟自己较劲。</div>
+            </div>
+          </div>
+          <div class="gt-item">
+            <div class="gt-dot"></div>
+            <div class="gt-body">
+              <div class="gt-place">巡演终章</div>
+              <div class="gt-date-txt">2026</div>
+              <div class="gt-desc">七个人手拉手走向延伸舞台，身后亮起七年前的练习室监控。<b>加冠不是结束，是开始。</b></div>
+            </div>
+          </div>
+        </div>
+
+        <blockquote class="guan-quote">
+          「我不是加冠了，我是我自己。」
+          <footer>—— 想对小羊同学说</footer>
+        </blockquote>
+      </div>
+
+      <div class="guan-right">
+        <div class="guan-film" id="guanFilm"></div>
+        <div class="guan-film-hint">点击任一舞台片段 · 全屏播放</div>
+      </div>
+    </div>
+
+    <div class="guan-stats">
+      <div class="gs-item"><span class="gs-num">7</span><span class="gs-label">道光束汇成一道</span></div>
+      <div class="gs-item"><span class="gs-num">1</span><span class="gs-label">顶只属于他的冠</span></div>
+      <div class="gs-item"><span class="gs-num">∞</span><span class="gs-label">份还在长大的喜欢</span></div>
+    </div>
+  </section>
+
+  <!-- 写真滚动条 -->
+  <section class="sec gallery" id="gallery">
+    <div class="sec-head">
+      <div class="sec-index">03</div>
+      <h2 class="sec-title">镜头里的他</h2>
+      <p class="sec-desc">你收藏的那些瞬间，都在这里。<span class="sec-hint">按住可以拖动</span></p>
+    </div>
+  </section>
+
+  <div class="marquee-wrap" id="marqueeWrap">
+    <div class="marquee" id="marqueeA"></div>
+    <div class="marquee marquee-rev" id="marqueeB"></div>
+  </div>
+
+  <div class="gallery-count">
+    <span id="galCount">39</span> PHOTOS · 全部为本人
+  </div>
+
+  <!-- 短视频 -->
+  <section class="sec clips" id="clips">
+    <div class="sec-head">
+      <div class="sec-index">04</div>
+      <h2 class="sec-title">生活里的片段</h2>
+      <p class="sec-desc">不是舞台上的他，是会笑、会闹、会挠痒痒的他。<br>那些你偷偷存下的画面，点击可以全屏播放。</p>
+    </div>
+    <div class="clip-grid" id="clipGrid"></div>
+  </section>
+
+  <!-- 他的歌 -->
+  <section class="sec songs" id="songs">
+    <div class="sec-head">
+      <div class="sec-index">05</div>
+      <h2 class="sec-title">他唱过的歌</h2>
+      <p class="sec-desc">
+        从《心室》到《加冠》，每一首都是你喜欢的他留下的一段声音。<br>
+        <span class="song-tip">点击卡片可前往官方平台收听完整版</span>
+      </p>
+    </div>
+
+    <div class="song-wall" id="songWall"></div>
+
+    <div class="song-custom">
+      <div class="sc-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18V5l11-2v13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.7"/><circle cx="17" cy="16" r="3" stroke="currentColor" stroke-width="1.7"/></svg>
+      </div>
+      <div class="sc-body">
+        <div class="sc-title">想把他的歌设成背景？</div>
+        <div class="sc-desc">
+          把你自己合法获取的音频文件放进 <code>assets/music_sel/</code> 目录，
+          网页会自动读取并加入轮播。把文件名改成歌名即可，例如
+          <code>唯我论者的独白.mp3</code>。
+        </div>
+      </div>
+      <div class="sc-note">详见 README「自定义背景音乐」</div>
+    </div>
+  </section>
+
+  <!-- 动向便签 -->
+  <section class="sec news" id="news">
+    <div class="sec-head">
+      <div class="sec-index">06</div>
+      <h2 class="sec-title">接下来，等你</h2>
+      <p class="sec-desc">他一直在往前，喜欢他的人一直在后面看着 —— 包括你。</p>
+    </div>
+
+    <div class="news-bar">
+      <div class="news-status" id="newsStatus">
+        <span class="news-pulse"></span>
+        <span id="newsStatusText">正在连接实时动向…</span>
+      </div>
+      <div class="news-time" id="newsTime"></div>
+    </div>
+
+    <div class="notes-board" id="notesBoard"></div>
+    <div class="notes-legend">
+      <span class="lg"><i class="dot dot-live"></i>实时抓取</span>
+      <span class="lg"><i class="dot dot-plan"></i>他的行程</span>
+      <span class="lg"><i class="dot dot-wish"></i>写给你的便签</span>
+    </div>
+  </section>
+
+  <!-- 祝福 -->
+  <section class="sec wish" id="wish">
+    <div class="wish-glow"></div>
+    <div class="wish-inner">
+      <div class="wish-cake">🎂</div>
+      <h2 class="wish-title">生日快乐，小羊同学</h2>
+      <div class="wish-from">以下是他的口吻，写给你的</div>
+      <div class="wish-letter" id="wishLetter"></div>
+      <div class="wish-sign">
+        <div class="ws-line"></div>
+        <div class="ws-signature" id="wsSignature">
+          <span class="ws-hand">马嘉祺</span>
+          <svg class="ws-underline" viewBox="0 0 220 16" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M4 11 C 40 5, 78 14, 112 8 S 186 6, 216 10" fill="none"
+                  stroke="url(#sigGrad)" stroke-width="2" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="sigGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="rgba(232,201,138,0)"/>
+                <stop offset="35%" stop-color="rgba(232,201,138,.85)"/>
+                <stop offset="100%" stop-color="rgba(242,215,164,.2)"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="ws-sub">托一个叫 soulmate 的人，捎给你的</div>
+      </div>
+      <div class="wish-author">
+        <div class="wa-line"></div>
+        <div class="wa-name">soulmate</div>
+        <div class="wa-sub">制作者 · 笔名</div>
+      </div>
+      <div class="wish-meta" id="wishMeta"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-l">
+      <div class="foot-title">给小羊同学的生日礼物</div>
+      <div class="foot-note">用一点心意，做一份只属于你的礼物。</div>
+    </div>
+    <div class="foot-r">
+      <div class="foot-note">背景音乐来自 Mixkit（免费可商用授权）</div>
+      <div class="foot-note">图片与视频片段来自公开网络，仅作个人纪念用途</div>
+      <div class="foot-note">制作者笔名 · soulmate</div>
+    </div>
+  </div>
+</footer>
+
+<!-- 音乐播放器 -->
+<div class="player" id="player">
+  <button class="p-play" id="pPlay" aria-label="播放/暂停">
+    <svg id="pIconPause" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+    <svg id="pIconPlay" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="display:none"><path d="M4 2.5v11l9-5.5-9-5.5z"/></svg>
+  </button>
+  <div class="p-body">
+    <div class="p-top">
+      <span class="p-name" id="pName">—</span>
+      <span class="p-time" id="pTime">0:00 / 0:00</span>
+    </div>
+    <div class="p-bar" id="pBarWrap"><i id="pBar"></i></div>
+  </div>
+  <div class="p-vol">
+    <button class="p-mute" id="pMute" aria-label="静音切换">
+      <svg id="volOn" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 010 7M18.5 5.5a9 9 0 010 13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <svg id="volOff" width="16" height="16" viewBox="0 0 24 24" fill="none" style="display:none"><path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor"/><path d="M16 9l6 6M22 9l-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    </button>
+    <input type="range" id="pVol" min="0" max="100" value="26" aria-label="音量">
+  </div>
+</div>
+
+<!-- 全屏播放器 -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="关闭">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+  </button>
+  <div class="lb-info">
+    <div class="lb-title" id="lbTitle"></div>
+    <div class="lb-desc" id="lbDesc"></div>
+  </div>
+  <video id="lbVideo" playsinline controls preload="metadata"></video>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<audio id="bgm" loop preload="auto"></audio>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+[
+ {
+  "id": "vlog",
+  "file": "assets/video/vlog.mp4",
+  "poster": "assets/video/posters/vlog.jpg",
+  "title": "卸妆 vlog",
+  "desc": "镜头前的碎碎念，最真实的那一面",
+  "dur": 90,
+  "w": 640,
+  "h": 360,
+  "orient": "landscape"
+ },
+ {
+  "id": "sleep",
+  "file": "assets/video/sleep.mp4",
+  "poster": "assets/video/posters/sleep.jpg",
+  "title": "晚安时刻",
+  "desc": "说了晚安，就真的要去睡觉了",
+  "dur": 33,
+  "w": 360,
+  "h": 480,
+  "orient": "portrait"
+ },
+ {
+  "id": "sport",
+  "file": "assets/video/sport.mp4",
+  "poster": "assets/video/posters/sport.jpg",
+  "title": "运动搭子",
+  "desc": "和小狗在一起的下午",
+  "dur": 40,
+  "w": 640,
+  "h": 360,
+  "orient": "landscape"
+ },
+ {
+  "id": "practice",
+  "file": "assets/video/practice.mp4",
+  "poster": "assets/video/posters/practice.jpg",
+  "title": "练习室",
+  "desc": "一遍遍重复的《往事随风》",
+  "dur": 70,
+  "w": 640,
+  "h": 360,
+  "orient": "landscape"
+ },
+ {
+  "id": "behind",
+  "file": "assets/video/behind.mp4",
+  "poster": "assets/video/posters/behind.jpg",
+  "title": "幕后花絮",
+  "desc": "镜头外的他，比舞台上的更鲜活",
+  "dur": 100,
+  "w": 360,
+  "h": 480,
+  "orient": "portrait"
+ },
+ {
+  "id": "a",
+  "file": "assets/video/a.mp4",
+  "poster": "assets/video/posters/a.jpg",
+  "title": "现场直拍",
+  "desc": "15 秒的心跳瞬间",
+  "dur": 14,
+  "w": 360,
+  "h": 640,
+  "orient": "portrait"
+ }
+]

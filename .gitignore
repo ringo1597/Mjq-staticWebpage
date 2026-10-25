@@ -1,0 +1,5 @@
+# 本地工具与记忆，不上传
+.workbuddy/
+*.log
+.DS_Store
+Thumbs.db

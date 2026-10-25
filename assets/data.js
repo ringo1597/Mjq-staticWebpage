@@ -1,0 +1,267 @@
+// 本地内联数据（保证 file:// 直接双击打开也能正常显示，不受 CORS 限制）
+window.SITE_DATA = {
+  gallery: [
+  {
+    "file": "assets/gallery/g00.jpg",
+    "src": "ph_56_a6451c88b8.jpg"
+  },
+  {
+    "file": "assets/gallery/g01.jpg",
+    "src": "p439_25975b74.jpg"
+  },
+  {
+    "file": "assets/gallery/g02.jpg",
+    "src": "p233_ce8fd014.jpg"
+  },
+  {
+    "file": "assets/gallery/g03.jpg",
+    "src": "c_6df44901.jpg"
+  },
+  {
+    "file": "assets/gallery/g04.jpg",
+    "src": "p224_1672421b.jpg"
+  },
+  {
+    "file": "assets/gallery/g05.jpg",
+    "src": "p707_bc03ed56.jpg"
+  },
+  {
+    "file": "assets/gallery/g06.jpg",
+    "src": "p745_8f69b2ab.jpg"
+  },
+  {
+    "file": "assets/gallery/g07.jpg",
+    "src": "c_70c80249.jpg"
+  },
+  {
+    "file": "assets/gallery/g08.jpg",
+    "src": "p452_54dc6447.jpg"
+  },
+  {
+    "file": "assets/gallery/g09.jpg",
+    "src": "c_da677545.jpg"
+  },
+  {
+    "file": "assets/gallery/g10.jpg",
+    "src": "p593_99fe70bb.jpg"
+  },
+  {
+    "file": "assets/gallery/g11.jpg",
+    "src": "p50_548cd4b2.jpg"
+  },
+  {
+    "file": "assets/gallery/g12.jpg",
+    "src": "p163_c4a931b1.jpg"
+  },
+  {
+    "file": "assets/gallery/g13.jpg",
+    "src": "c_18be7ed9.jpg"
+  },
+  {
+    "file": "assets/gallery/g14.jpg",
+    "src": "p568_c645c529.jpg"
+  },
+  {
+    "file": "assets/gallery/g15.jpg",
+    "src": "p428_43f08d67.jpg"
+  },
+  {
+    "file": "assets/gallery/g16.jpg",
+    "src": "p240_4d38dfed.jpg"
+  },
+  {
+    "file": "assets/gallery/g17.jpg",
+    "src": "p387_44bfeacb.jpg"
+  },
+  {
+    "file": "assets/gallery/g18.jpg",
+    "src": "c_c6ed2e33.jpg"
+  },
+  {
+    "file": "assets/gallery/g19.jpg",
+    "src": "p199_56edb9f9.jpg"
+  },
+  {
+    "file": "assets/gallery/g20.jpg",
+    "src": "p270_e184700a.jpg"
+  },
+  {
+    "file": "assets/gallery/g21.jpg",
+    "src": "p213_dc1de007.jpg"
+  },
+  {
+    "file": "assets/gallery/g22.jpg",
+    "src": "p540_721dcb9d.jpg"
+  },
+  {
+    "file": "assets/gallery/g23.jpg",
+    "src": "p698_216fa55d.jpg"
+  },
+  {
+    "file": "assets/gallery/g24.jpg",
+    "src": "p227_341ba76e.jpg"
+  },
+  {
+    "file": "assets/gallery/g25.jpg",
+    "src": "p397_2534c77c.jpg"
+  },
+  {
+    "file": "assets/gallery/g26.jpg",
+    "src": "p182_008df00c.jpg"
+  },
+  {
+    "file": "assets/gallery/g27.jpg",
+    "src": "p428_15a0d2f5.jpg"
+  },
+  {
+    "file": "assets/gallery/g28.jpg",
+    "src": "c_853f0922.jpg"
+  },
+  {
+    "file": "assets/gallery/g29.jpg",
+    "src": "ph_290_5b34299304.jpg"
+  },
+  {
+    "file": "assets/gallery/g30.jpg",
+    "src": "p210_7391c1f2.jpg"
+  },
+  {
+    "file": "assets/gallery/g31.jpg",
+    "src": "p260_4bc50e94.jpg"
+  },
+  {
+    "file": "assets/gallery/g32.jpg",
+    "src": "p397_e6f3a6d0.jpg"
+  },
+  {
+    "file": "assets/gallery/g33.jpg",
+    "src": "p283_e2264f1c.jpg"
+  },
+  {
+    "file": "assets/gallery/g34.jpg",
+    "src": "c_1d7703b2.jpg"
+  },
+  {
+    "file": "assets/gallery/g35.jpg",
+    "src": "ph_308_b915512e40.jpg"
+  },
+  {
+    "file": "assets/gallery/g36.jpg",
+    "src": "c_38390e0b.jpg"
+  },
+  {
+    "file": "assets/gallery/g37.jpg",
+    "src": "p443_a302670b.jpg"
+  },
+  {
+    "file": "assets/gallery/g38.jpg",
+    "src": "p256_1a10e19c.jpg"
+  }
+],
+  videos: [
+  {
+    "id": "vlog",
+    "file": "assets/video/vlog.mp4",
+    "poster": "assets/video/posters/vlog.jpg",
+    "title": "卸妆 vlog",
+    "desc": "镜头前的碎碎念，最真实的那一面",
+    "dur": 90,
+    "w": 640,
+    "h": 360,
+    "orient": "landscape"
+  },
+  {
+    "id": "sleep",
+    "file": "assets/video/sleep.mp4",
+    "poster": "assets/video/posters/sleep.jpg",
+    "title": "晚安时刻",
+    "desc": "说了晚安，就真的要去睡觉了",
+    "dur": 33,
+    "w": 360,
+    "h": 480,
+    "orient": "portrait"
+  },
+  {
+    "id": "sport",
+    "file": "assets/video/sport.mp4",
+    "poster": "assets/video/posters/sport.jpg",
+    "title": "运动搭子",
+    "desc": "和小狗在一起的下午",
+    "dur": 40,
+    "w": 640,
+    "h": 360,
+    "orient": "landscape"
+  },
+  {
+    "id": "practice",
+    "file": "assets/video/practice.mp4",
+    "poster": "assets/video/posters/practice.jpg",
+    "title": "练习室",
+    "desc": "一遍遍重复的《往事随风》",
+    "dur": 70,
+    "w": 640,
+    "h": 360,
+    "orient": "landscape"
+  },
+  {
+    "id": "behind",
+    "file": "assets/video/behind.mp4",
+    "poster": "assets/video/posters/behind.jpg",
+    "title": "幕后花絮",
+    "desc": "镜头外的他，比舞台上的更鲜活",
+    "dur": 100,
+    "w": 360,
+    "h": 480,
+    "orient": "portrait"
+  },
+  {
+    "id": "a",
+    "file": "assets/video/a.mp4",
+    "poster": "assets/video/posters/a.jpg",
+    "title": "现场直拍",
+    "desc": "15 秒的心跳瞬间",
+    "dur": 14,
+    "w": 360,
+    "h": 640,
+    "orient": "portrait"
+  }
+],
+  music: [
+  {
+    "id": "587",
+    "file": "assets/music_sel/track_587.mp3",
+    "name": "Orchestral Pop",
+    "mood": "Warm & Celebratory"
+  },
+  {
+    "id": "443",
+    "file": "assets/music_sel/track_443.mp3",
+    "name": "Chillout",
+    "mood": "Soft & Easy"
+  },
+  {
+    "id": "493",
+    "file": "assets/music_sel/track_493.mp3",
+    "name": "Jazz",
+    "mood": "Gentle & Romantic"
+  },
+  {
+    "id": "970",
+    "file": "assets/music_sel/track_970.mp3",
+    "name": "Pop",
+    "mood": "Bright & Positive"
+  },
+  {
+    "id": "657",
+    "file": "assets/music_sel/track_657.mp3",
+    "name": "Emotional Piano",
+    "mood": "Reflective"
+  },
+  {
+    "id": "250",
+    "file": "assets/music_sel/track_250.mp3",
+    "name": "R&B",
+    "mood": "Smooth & Modern"
+  }
+]
+};

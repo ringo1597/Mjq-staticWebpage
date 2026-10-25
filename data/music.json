@@ -1,0 +1,38 @@
+[
+ {
+  "id": "587",
+  "file": "assets/music_sel/track_587.mp3",
+  "name": "Orchestral Pop",
+  "mood": "Warm & Celebratory"
+ },
+ {
+  "id": "443",
+  "file": "assets/music_sel/track_443.mp3",
+  "name": "Chillout",
+  "mood": "Soft & Easy"
+ },
+ {
+  "id": "493",
+  "file": "assets/music_sel/track_493.mp3",
+  "name": "Jazz",
+  "mood": "Gentle & Romantic"
+ },
+ {
+  "id": "970",
+  "file": "assets/music_sel/track_970.mp3",
+  "name": "Pop",
+  "mood": "Bright & Positive"
+ },
+ {
+  "id": "657",
+  "file": "assets/music_sel/track_657.mp3",
+  "name": "Emotional Piano",
+  "mood": "Reflective"
+ },
+ {
+  "id": "250",
+  "file": "assets/music_sel/track_250.mp3",
+  "name": "R&B",
+  "mood": "Smooth & Modern"
+ }
+]

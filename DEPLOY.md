@@ -52,12 +52,36 @@ bash deploy.sh 你的TOKEN粘贴在这里
 
 ---
 
-## 部署完成后
+## ✅ 当前状态（已部署完成）
 
-网址是：
+网址：
 
 ```
 https://ringo1597.github.io/Mjq-staticWebpage/
+```
+
+- 仓库：`ringo1597/Mjq-staticWebpage`（public）
+- Pages 构建模式：**GitHub Actions**（build_type: workflow）
+- HTTPS：已自动签发（Strict-Transport-Security 已启用）
+- 线上验证：主页与全部素材 200，浏览器实测零 console error
+
+**以后改完文件，只要 push 就会自动重新部署**：
+
+```bash
+cd /d/aiWork/workBuddyProjects/wbDemo1
+git add -A && git commit -m "更新内容"
+git push
+```
+
+push 完等 1-2 分钟刷新网址即可。
+
+### 本机已有凭据
+Git Credential Manager 里已存 `ringo1597` 的凭据，所以 `git push` **不需要再输 Token**。
+如果要调 GitHub API，可以用这个方式取凭据：
+
+```bash
+export GH_TOKEN=$(printf "protocol=https\nhost=github.com\n\n" | git credential fill | grep '^password=' | cut -d= -f2-)
+gh api repos/ringo1597/Mjq-staticWebpage/pages
 ```
 
 ### 如果第一次打开显示 404
